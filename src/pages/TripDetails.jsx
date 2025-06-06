@@ -1,6 +1,5 @@
 import React from 'react'
 import TravelerCard from '../components/TravelerCard'
-import SearchBar from '../components/SearchBar'
 import { useArray } from '../contexts/arrayContext'
 import { useParams } from 'react-router-dom'
 
@@ -29,7 +28,13 @@ const TripDetails = () => {
                     <h2>Rubrica dei viaggiatori</h2>
                 </div>
                 <div className="col-12">
-                    <SearchBar />
+                    <form>
+                        <div className="mb-3">
+                            <label htmlFor="exampleInputEmail1" className="form-label">Inserisci nome</label>
+                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Search</button>
+                    </form>
                 </div>
             </div>
 
