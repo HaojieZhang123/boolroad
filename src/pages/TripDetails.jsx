@@ -2,6 +2,8 @@ import React from 'react'
 import TravelerCard from '../components/TravelerCard'
 import SearchBar from '../components/SearchBar'
 
+
+
 const TripDetails = () => {
     const TravelerArray = [1, 2, 3, 4, 5]
     return (
