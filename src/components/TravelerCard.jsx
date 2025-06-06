@@ -1,20 +1,20 @@
 import React from 'react'
 
-const TravelerCard = ({ id }) => {
+const TravelerCard = ({ traveler }) => {
     return (
         <>
             <div className="accordion-item">
                 <h2 className="accordion-header">
-                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${id}`} aria-expanded="true" aria-controls={`collapse${id}`}>
-                        Nome Cognome
+                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${traveler.id}`} aria-expanded="true" aria-controls={`collapse${traveler.id}`}>
+                        {traveler.name} {traveler.surname}
                     </button>
                 </h2>
-                <div id={`collapse${id}`} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div id={`collapse${traveler.id}`} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                        <p>Telefono</p>
-                        <p>Email</p>
-                        <p>Codice Fiscale</p>
-                        <p>Contatto di emergenza</p>
+                        <p>{traveler.phone}</p>
+                        <p>{traveler.email}</p>
+                        <p>{traveler.cf}</p>
+                        <p>{traveler.emergency}</p>
                     </div>
                 </div>
             </div>

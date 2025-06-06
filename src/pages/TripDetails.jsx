@@ -2,18 +2,24 @@ import React from 'react'
 import TravelerCard from '../components/TravelerCard'
 import SearchBar from '../components/SearchBar'
 import { useArray } from '../contexts/arrayContext'
+import { useParams } from 'react-router-dom'
 
 const TripDetails = () => {
-    const { travelerArray } = useArray();
+    const { array } = useArray();
+
+    const { id } = useParams();
+
+    // ricerca del viaggio specifico
+    const trip = array.find((trip) => trip.id === parseInt(id));
 
     return (
         <>
             {/* Intestazione pagina */}
             <div className="row my-3">
                 <div className="col-12">
-                    <h1 className='mb-3'>Nome del viaggio</h1>
-                    <h3>Destinazione</h3>
-                    <p>Dal XX/XX/XXXX al YY/YY/YYYY</p>
+                    <h1 className='mb-3'>{trip.trip_name}</h1>
+                    <h3>{trip.destination}</h3>
+                    <p>Dal {trip.start} al {trip.end}</p>
                 </div>
             </div>
 
@@ -31,8 +37,8 @@ const TripDetails = () => {
             <div className="row my-3">
                 <div className="col-12">
                     <div className="accordion" id="accordionExample">
-                        {travelerArray.map((traveler) => (
-                            <TravelerCard key={traveler.id} id={traveler.id} nome={traveler.nome} />
+                        {trip.travelers.map((traveler) => (
+                            <TravelerCard key={traveler.id} traveler={traveler} />
                         ))}
                     </div>
                 </div>
