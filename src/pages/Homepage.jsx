@@ -1,8 +1,12 @@
 import React from 'react'
 import TripCard from '../components/TripCard'
+import { useArray } from '../contexts/arrayContext'
 
 
 const Homepage = () => {
+
+    const { array } = useArray();
+
     return (
         <>
             <div className="row my-3">
@@ -13,12 +17,9 @@ const Homepage = () => {
 
 
             <div className="row">
-
-                {tripArray.map((trip) => {
-                    <div className="col-12">
-                        <TripCard />
-                    </div>
-                })}
+                {array.map((trip) => (
+                    <TripCard trip={trip} key={`trip-${trip.id}`} />
+                ))}
             </div>
         </>
     )
