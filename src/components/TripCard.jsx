@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const TripCard = ({ trip }) => {
     return (
         <>
-            <div className="col-12">
+            <div className="col-12 my-1">
                 <Link className='text-decoration-none' to={`/trip/${trip.id}`}>
                     <div className="card">
                         <div className="card-body">

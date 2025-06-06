@@ -5,7 +5,7 @@ const TravelerCard = ({ traveler }) => {
         <>
             <div className="accordion-item">
                 <h2 className="accordion-header">
-                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${traveler.id}`} aria-expanded="true" aria-controls={`collapse${traveler.id}`}>
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${traveler.id}`} aria-expanded="true" aria-controls={`collapse${traveler.id}`}>
                         {traveler.name} {traveler.surname}
                     </button>
                 </h2>
