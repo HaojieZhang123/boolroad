@@ -103,7 +103,7 @@ const TripDetails = () => {
                         {/* button to show add new traveler */}
                         <div className="col-6 pb-3">
                             <button type="button" className="btn custom-button float-end" onClick={() => setShowAddTraveler((prev) => !prev)}>
-                                {showAddTraveler ? 'Annulla' : 'Aggiungi nuovo viaggiatore'}
+                                {showAddTraveler ? 'Annulla' : 'Aggiungi nuovo membro'}
                             </button>
                         </div>
                         {showAddTraveler && (
@@ -112,10 +112,10 @@ const TripDetails = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="row">
                                         <div className="col-12 col-md-6 my-2">
-                                            <input type="text" className="form-control" placeholder="Nome" name='name' value={formData.name} onChange={handleChange} />
+                                            <input type="text" className="form-control" placeholder="Nome" name='name' required value={formData.name} onChange={handleChange} />
                                         </div>
                                         <div className="col-12 col-md my-2">
-                                            <input type="text" className="form-control" placeholder="Cognome" name='surname' value={formData.surname} onChange={handleChange} required='' />
+                                            <input type="text" className="form-control" placeholder="Cognome" name='surname' value={formData.surname} onChange={handleChange} required />
                                         </div>
                                     </div>
                                     <div className="row">

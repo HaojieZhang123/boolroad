@@ -31,10 +31,11 @@ header {
     display: flex;
     align-items: center;
     padding: 0 32px;
-    box-shadow: 0 6px 24px rgba(38, 105, 236, 0.10);
+    box-shadow: 0 6px 24px rgba(38, 105, 236, 0.30);
     border-bottom-left-radius: 28px;
     border-bottom-right-radius: 28px;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 10;
 }
 
@@ -68,8 +69,14 @@ header img {
     background: var(--card-bg);
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
-    transition: box-shadow 0.2s;
+    transition: all 0.2s;
     margin-bottom: 18px;
+}
+
+.trip-card:hover {
+    box-shadow: 0 8px 32px rgba(38, 105, 236, 0.16);
+    transform: translateY(-2px) scale(1.01);
+    cursor: pointer;
 }
 
 /* Accordion Traveler List */
@@ -85,7 +92,13 @@ header img {
     margin-bottom: 18px;
     border: 1.5px solid var(--mid-grey);
     overflow: hidden;
-    transition: box-shadow 0.2s;
+    transition: all 0.2s;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 8px 32px rgba(38, 105, 236, 0.16);
+    transform: translateY(-2px) scale(1.01);
+    cursor: pointer;
 }
 
 .accordion-header {

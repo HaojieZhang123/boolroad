@@ -35,7 +35,7 @@ const Homepage = () => {
     // useEffect to update array in case of adding new trip
     useEffect(() => {
         setArray(array);
-        console.log(array);
+        // console.log(array);
     }, [array]);
 
     return (
@@ -58,21 +58,21 @@ const Homepage = () => {
                             <div className="row py-1">
                                 <div className="col-12 col-lg-6">
                                     <label className="form-label">Destinazione</label>
-                                    <input type="text" className="form-control" name='destination' value={formData.destination} onChange={handleChange} />
+                                    <input type="text" className="form-control" name='destination' required value={formData.destination} onChange={handleChange} />
                                 </div>
                                 <div className="col-12 col-lg-6">
                                     <label className="form-label">Nome del viaggio</label>
-                                    <input type="text" className="form-control" name='trip_name' value={formData.trip_name} onChange={handleChange} />
+                                    <input type="text" className="form-control" name='trip_name' required value={formData.trip_name} onChange={handleChange} />
                                 </div>
                             </div>
                             <div className="row py-1">
                                 <div className="col-12 col-lg-6">
                                     <label className="form-label">Data di inizio</label>
-                                    <input type="text" className="form-control" name='start' placeholder='inserire data in formato yyyy/mm/dd' value={formData.start} onChange={handleChange} />
+                                    <input type="text" className="form-control" name='start' required placeholder='inserire data in formato yyyy/mm/dd' value={formData.start} onChange={handleChange} />
                                 </div>
                                 <div className="col-12 col-lg-6">
                                     <label className="form-label">Data di fine</label>
-                                    <input type="text" className="form-control" name='end' placeholder='inserire data in formato yyyy/mm/dd' value={formData.end} onChange={handleChange} />
+                                    <input type="text" className="form-control" name='end' required placeholder='inserire data in formato yyyy/mm/dd' value={formData.end} onChange={handleChange} />
                                 </div>
                             </div>
                             <button type="submit" className="btn py-2 custom-button">
