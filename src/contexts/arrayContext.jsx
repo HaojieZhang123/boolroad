@@ -1,11 +1,10 @@
 import { createContext, useContext, useState } from "react";
 
-// ...existing code...
 const tripArray = [
     {
         id: 1,
         destination: 'Londra',
-        trip_name: "Viaggio a Londra",
+        trip_name: "London Trip",
         start: "2025/06/10",
         end: "2025/06/20",
         travelers: [
@@ -29,7 +28,7 @@ const tripArray = [
     {
         id: 2,
         destination: "Parigi",
-        trip_name: "Viaggio a Parigi",
+        trip_name: "La Citta' delle Luci",
         start: "2025/06/25",
         end: "2025/07/05",
         travelers: [
@@ -53,7 +52,7 @@ const tripArray = [
     {
         id: 3,
         destination: "Bucarest",
-        trip_name: "Viaggio a Bucarest",
+        trip_name: "La piccola Parigi",
         start: "2025/07/10",
         end: "2025/07/20",
         travelers: [
@@ -77,7 +76,7 @@ const tripArray = [
     {
         id: 4,
         destination: "Dubai",
-        trip_name: "Viaggio a Dubai",
+        trip_name: "Citta' dell'oro",
         start: "2025/07/25",
         end: "2025/08/05",
         travelers: [
@@ -101,7 +100,7 @@ const tripArray = [
     {
         id: 5,
         destination: "Los Angeles",
-        trip_name: "Viaggio a Los Angeles",
+        trip_name: "La citta' degli Angeli",
         start: "2025/08/10",
         end: "2025/08/20",
         travelers: [
@@ -127,7 +126,7 @@ const tripArray = [
     {
         id: 6,
         destination: "New York",
-        trip_name: "Viaggio a New York",
+        trip_name: "La Grande Mela",
         start: "2025/08/25",
         end: "2025/09/05",
         travelers: [
@@ -153,7 +152,7 @@ const tripArray = [
     {
         id: 7,
         destination: "Roma",
-        trip_name: "Viaggio a Roma",
+        trip_name: "La Citta' Eterna",
         start: "2025/09/10",
         end: "2025/09/20",
         travelers: [
@@ -177,7 +176,7 @@ const tripArray = [
     {
         id: 8,
         destination: "Vienna",
-        trip_name: "Viaggio a Vienna",
+        trip_name: "La citta' dei Palazzi",
         start: "2025/09/25",
         end: "2025/10/05",
         travelers: [
@@ -198,7 +197,6 @@ const tripArray = [
         ]
     }
 ];
-// ...existing code...
 
 const ArrayContext = createContext();
 

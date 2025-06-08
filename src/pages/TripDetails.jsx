@@ -6,12 +6,16 @@ import { useState, useEffect } from 'react'
 
 const TripDetails = () => {
 
-    const { array } = useArray();
+    // setArray to update array in case of adding new traveler
+    const { array, setArray } = useArray();
 
     const { id } = useParams();
 
-    // ricerca del viaggio specifico
+    // search of specific trip
     const trip = array.find((trip) => trip.id === parseInt(id));
+
+    // state toggle of new traveler's form
+    const [showAddTraveler, setShowAddTraveler] = useState(false);
 
     const [travelers, setTravelers] = useState(trip.travelers);
     const [search, setSearch] = useState([]);
@@ -36,40 +40,119 @@ const TripDetails = () => {
         setFilteredTravelers(travelers);
     }, [travelers]);
 
+    // form to add new traveler
+    const voidFormData = { id: '', name: '', surname: '', phone: '', email: '', cf: '', emergency: '' };
+    const [formData, setFormData] = useState(voidFormData);
+
+    // handle form change
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    // handle form submit
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        formData.id = travelers.length + 1;
+        setTravelers([...travelers, formData]);
+        setFormData(voidFormData);
+    };
+
+    // update travelers in case of adding new traveler
+    useEffect(() => {
+        setTravelers(trip.travelers);
+    }, [trip]);
+
+
     return (
         <>
-            {/* Intestazione pagina */}
-            <div className="row my-3">
-                <div className="col-12">
-                    <h1 className='mb-3'>{trip.trip_name}</h1>
-                    <h3>{trip.destination}</h3>
-                    <p>Dal {trip.start} al {trip.end}</p>
-                </div>
-            </div>
 
-            {/* Barra di ricerca */}
-            <div className="row my-3">
-                <div className="col-12">
-                    <h2>Rubrica dei viaggiatori</h2>
+            <div className="row">
+                <div className="col-12 col-lg-6">
+                    {/* Intestazione pagina */}
+                    <div className="row py-3">
+                        <div className="col-12">
+                            <h1 className='pb-3'><b>{trip.trip_name}</b></h1>
+                            <h3>{trip.destination}</h3>
+                            <p>Dal {trip.start} al {trip.end}</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-12">
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputEmail1" className="form-label">Inserisci nome</label>
-                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={search} onChange={handleSearch} />
+
+                <div className="col-12 col-lg-6">
+                    {/* Barra di ricerca */}
+                    <div className="row py-3">
+                        <div className="col-12 pb-3">
+                            <h2>Rubrica dei viaggiatori</h2>
+                        </div>
+                        <div className="col-12">
+                            <div>
+                                {/* <label className="form-label">Cerca viaggiatore</label> */}
+                                <input type="text" className="form-control search-bar" value={search} onChange={handleSearch} placeholder='Cerca viaggiatore' />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Rubrica */}
+                    <div className="row py-3">
+                        <div className="col-6 pb-3">
+                            <h4>
+                                {filteredTravelers.length} {filteredTravelers.length === 1 ? 'viaggiatore' : 'viaggiatori'}
+                            </h4>
+                        </div>
+
+                        {/* button to show add new traveler */}
+                        <div className="col-6 pb-3">
+                            <button type="button" className="btn custom-button float-end" onClick={() => setShowAddTraveler((prev) => !prev)}>
+                                {showAddTraveler ? 'Annulla' : 'Aggiungi nuovo viaggiatore'}
+                            </button>
+                        </div>
+                        {showAddTraveler && (
+                            <div className="col-12 pb-3">
+                                {/* form adding new traveler */}
+                                <form onSubmit={handleSubmit}>
+                                    <div className="row">
+                                        <div className="col-12 col-md-6 my-2">
+                                            <input type="text" className="form-control" placeholder="Nome" name='name' value={formData.name} onChange={handleChange} />
+                                        </div>
+                                        <div className="col-12 col-md my-2">
+                                            <input type="text" className="form-control" placeholder="Cognome" name='surname' value={formData.surname} onChange={handleChange} required='' />
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-12 col-md-6 my-2">
+                                            <input type="text" className="form-control" placeholder="Telefono" name='phone' value={formData.phone} onChange={handleChange} />
+                                        </div>
+                                        <div className="col-12 col-md my-2">
+                                            <input type="text" className="form-control" placeholder="Email" name='email' value={formData.email} onChange={handleChange} />
+                                        </div>
+                                    </div>
+                                    <div className="row mb-2">
+                                        <div className="col-12 col-md-6 my-2">
+                                            <input type="text" className="form-control" placeholder="Codice fiscale" name='cf' value={formData.cf} onChange={handleChange} />
+                                        </div>
+                                        <div className="col-12 col-md my-2">
+                                            <input type="text" className="form-control" placeholder="Contatto di emergenza" name='emergency' value={formData.emergency} onChange={handleChange} />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="submit" className="btn custom-button mb-3">Aggiungi</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        )}
+
+                        <div className="col-12">
+                            <div className="accordion" id="accordionExample">
+                                {filteredTravelers.map((traveler) => (
+                                    <TravelerCard key={traveler.id} traveler={traveler} />
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* Rubrica */}
-            <div className="row my-3">
-                <div className="col-12">
-                    <div className="accordion" id="accordionExample">
-                        {filteredTravelers.map((traveler) => (
-                            <TravelerCard key={traveler.id} traveler={traveler} />
-                        ))}
-                    </div>
-                </div>
-            </div>
         </>
     );
 };
