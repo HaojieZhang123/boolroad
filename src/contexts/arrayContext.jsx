@@ -7,6 +7,7 @@ const tripArray = [
         trip_name: "London Trip",
         start: "2025/06/10",
         end: "2025/06/20",
+        image: "https://aer.eu/wp-content/uploads/2016/12/london-landscape-top-view.jpg",
         travelers: [
             { id: 1, name: "Luca", surname: "Rossi", phone: "+39 3451234567", email: "luca.rossi@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
             { id: 2, name: "Giulia", surname: "Verdi", phone: "+39 3462345678", email: "giulia.verdi@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
@@ -31,6 +32,7 @@ const tripArray = [
         trip_name: "La Citta' delle Luci",
         start: "2025/06/25",
         end: "2025/07/05",
+        image: "https://res.cloudinary.com/dlhhugvi8/image/upload/v1733329991/traveleasy.it/images/cinque_motivi_per_visitare_parigi_1eb9a6b3e5.jpg",
         travelers: [
             { id: 1, name: "Anna", surname: "Silvestri", phone: "+39 3451112233", email: "anna.silvestri@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
             { id: 2, name: "Emanuele", surname: "Piras", phone: "+39 3462223344", email: "emanuele.piras@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
@@ -55,6 +57,7 @@ const tripArray = [
         trip_name: "La piccola Parigi",
         start: "2025/07/10",
         end: "2025/07/20",
+        image: 'https://stories.weroad.it/wp-content/uploads/2023/08/Bucarest.jpeg',
         travelers: [
             { id: 1, name: "Giorgia", surname: "Rinaldi", phone: "+39 3451122334", email: "giorgia.rinaldi@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
             { id: 2, name: "Mauro", surname: "Barbieri", phone: "+39 3462233445", email: "mauro.barbieri@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
@@ -79,6 +82,7 @@ const tripArray = [
         trip_name: "Citta' dell'oro",
         start: "2025/07/25",
         end: "2025/08/05",
+        image: 'https://www.investindubai.gov.ae/-/media/gathercontent/poi/b/burj-khalifa/fallback-image/burj-khalifa-det-3.jpg',
         travelers: [
             { id: 1, name: "Ludovica", surname: "Bellini", phone: "+39 3455566778", email: "ludovica.bellini@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
             { id: 2, name: "Enrico", surname: "Palmieri", phone: "+39 3466677889", email: "enrico.palmieri@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
@@ -103,6 +107,7 @@ const tripArray = [
         trip_name: "La citta' degli Angeli",
         start: "2025/08/10",
         end: "2025/08/20",
+        image: 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/475000/475457-Los-Angeles.jpg',
         travelers: [
             { id: 1, name: "Massimo", surname: "Fiocchi", phone: "+39 3453031323", email: "massimo.fiocchi@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
             { id: 2, name: "Monica", surname: "Spina", phone: "+39 3463132334", email: "monica.spina@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
@@ -129,6 +134,7 @@ const tripArray = [
         trip_name: "La Grande Mela",
         start: "2025/08/25",
         end: "2025/09/05",
+        image: 'https://www.dimoredepoca.it/images/TOUR/nycskyline.jpg',
         travelers: [
             { id: 1, name: "Angela", surname: "Valle", phone: "+39 3454142434", email: "angela.valle@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
             { id: 2, name: "Gianluca", surname: "Ferraro", phone: "+39 3464243445", email: "gianluca.ferraro@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
@@ -155,6 +161,7 @@ const tripArray = [
         trip_name: "La Citta' Eterna",
         start: "2025/09/10",
         end: "2025/09/20",
+        image: 'https://tourismmedia.italia.it/is/image/mitur/20220127150143-colosseo-roma-lazio-shutterstock-756032350?wid=1600&hei=900&fit=constrain,1&fmt=webp',
         travelers: [
             { id: 1, name: "Sandro", surname: "Luciani", phone: "+39 3454647484", email: "sandro.luciani@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
             { id: 2, name: "Tatiana", surname: "Marchese", phone: "+39 3464748495", email: "tatiana.marchese@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
@@ -179,6 +186,7 @@ const tripArray = [
         trip_name: "La citta' dei Palazzi",
         start: "2025/09/25",
         end: "2025/10/05",
+        image: 'https://www.sixt.it/magazine/wp-content/uploads//sites/8/2023/01/shutterstock_2203600291-1.jpg',
         travelers: [
             { id: 1, name: "Cristina", surname: "Valenti", phone: "+39 3455152535", email: "cristina.valenti@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },
             { id: 2, name: "Maurizio", surname: "Bruni", phone: "+39 3465253546", email: "maurizio.bruni@example.com", cf: "XXXXXXXXXXX", emergency: '123456789' },

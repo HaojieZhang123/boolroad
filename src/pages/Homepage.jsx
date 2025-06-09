@@ -3,12 +3,7 @@ import TripCard from '../components/TripCard'
 import { useArray } from '../contexts/arrayContext'
 import { useState, useEffect } from 'react'
 
-import axios from 'axios'
-
-
 const Homepage = () => {
-
-
 
     // setArray to update array in case of adding new trip
     const { array, setArray } = useArray();
@@ -77,6 +72,12 @@ const Homepage = () => {
                                 <div className="col-12 col-lg-6">
                                     <label className="form-label">Data di fine</label>
                                     <input type="text" className="form-control" name='end' required placeholder='inserire data in formato yyyy/mm/dd' value={formData.end} onChange={handleChange} />
+                                </div>
+                            </div>
+                            <div>
+                                <div className="col-12">
+                                    <label className="form-label">Image url</label>
+                                    <input type="text" className="form-control" name='end' required placeholder='inserire image url' value={formData.image} onChange={handleChange} />
                                 </div>
                             </div>
                             <button type="submit" className="btn py-2 custom-button">

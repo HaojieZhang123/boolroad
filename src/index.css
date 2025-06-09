@@ -66,11 +66,21 @@ header img {
 
 /* Trip Card */
 .trip-card {
-    background: var(--card-bg);
+    /* background: var(--card-bg); */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     transition: all 0.2s;
     margin-bottom: 18px;
+}
+
+.trip-card>.card-body {
+    backdrop-filter: blur(2px) brightness(75%);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 18px;
 }
 
 .trip-card:hover {
