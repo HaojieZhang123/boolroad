@@ -3,8 +3,12 @@ import TripCard from '../components/TripCard'
 import { useArray } from '../contexts/arrayContext'
 import { useState, useEffect } from 'react'
 
+import axios from 'axios'
+
 
 const Homepage = () => {
+
+
 
     // setArray to update array in case of adding new trip
     const { array, setArray } = useArray();

@@ -91,7 +91,9 @@ const TripDetails = () => {
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <div className="col-12">
                     {/* Rubrica */}
                     <div className="row py-3">
                         <div className="col-6 pb-3">
@@ -110,46 +112,48 @@ const TripDetails = () => {
                             <div className="col-12 pb-3">
                                 {/* form adding new traveler */}
                                 <form onSubmit={handleSubmit}>
-                                    <div className="row">
-                                        <div className="col-12 col-md-6 my-2">
+                                    <div className="row d-flex justify-content-between">
+                                        <div className="col-12 col-md-6">
                                             <input type="text" className="form-control" placeholder="Nome" name='name' required value={formData.name} onChange={handleChange} />
                                         </div>
-                                        <div className="col-12 col-md my-2">
+                                        <div className="col-12 col-md-6">
                                             <input type="text" className="form-control" placeholder="Cognome" name='surname' value={formData.surname} onChange={handleChange} required />
                                         </div>
                                     </div>
-                                    <div className="row">
-                                        <div className="col-12 col-md-6 my-2">
+                                    <div className="row d-flex justify-content-around">
+                                        <div className="col-12 col-md-6">
                                             <input type="text" className="form-control" placeholder="Telefono" name='phone' value={formData.phone} onChange={handleChange} />
                                         </div>
-                                        <div className="col-12 col-md my-2">
+                                        <div className="col-12 col-md-6">
                                             <input type="text" className="form-control" placeholder="Email" name='email' value={formData.email} onChange={handleChange} />
                                         </div>
                                     </div>
-                                    <div className="row mb-2">
-                                        <div className="col-12 col-md-6 my-2">
+                                    <div className="row mb-2 d-flex justify-content-around">
+                                        <div className="col-12 col-md-6">
                                             <input type="text" className="form-control" placeholder="Codice fiscale" name='cf' value={formData.cf} onChange={handleChange} />
                                         </div>
-                                        <div className="col-12 col-md my-2">
+                                        <div className="col-12 col-md-6">
                                             <input type="text" className="form-control" placeholder="Contatto di emergenza" name='emergency' value={formData.emergency} onChange={handleChange} />
                                         </div>
                                     </div>
-                                    <div>
-                                        <button type="submit" className="btn custom-button mb-3">Aggiungi</button>
+                                    <div className='d-flex justify-content-center'>
+                                        <button type="submit" className="btn custom-button mb-3 px-5">Aggiungi</button>
                                     </div>
 
                                 </form>
                             </div>
                         )}
 
-                        <div className="col-12">
-                            <div className="accordion" id="accordionExample">
-                                {filteredTravelers.map((traveler) => (
-                                    <TravelerCard key={traveler.id} traveler={traveler} />
-                                ))}
-                            </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="accordion d-flex flex-wrap justify-content-around gap-2" id="accordionExample">
+                            {filteredTravelers.map((traveler) => (
+                                <TravelerCard key={traveler.id} traveler={traveler} />
+                            ))}
                         </div>
                     </div>
+
                 </div>
             </div>
 
