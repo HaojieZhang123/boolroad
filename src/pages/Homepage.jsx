@@ -77,7 +77,7 @@ const Homepage = () => {
                             <div>
                                 <div className="col-12">
                                     <label className="form-label">Image url</label>
-                                    <input type="text" className="form-control" name='end' required placeholder='inserire image url' value={formData.image} onChange={handleChange} />
+                                    <input type="text" className="form-control" name='image' required placeholder='inserire image url' value={formData.image} onChange={handleChange} />
                                 </div>
                             </div>
                             <button type="submit" className="btn py-2 custom-button">
